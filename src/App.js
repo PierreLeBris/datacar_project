@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React from 'react';
+import datacar from './DataCar.png';
 import './App.css';
 
-function App() {
+import TextInput1 from './component/TextInput1.js';
+import TextInput2 from './component/TextInput2.js';
+import DropdownMenu from './component/DropdownMenu.js';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <img src={datacar} alt="Description de l'image" className="overlay-image"/>
+      <TextInput1 />
+      <TextInput2 />
+      <DropdownMenu />
     </div>
   );
-}
+};
 
 export default App;
