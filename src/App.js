@@ -1,20 +1,16 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import datacar from './DataCar.png';
+//import datacar from './img/DataCar.png';
+import background from './img/DataCar.png';
 import './App.css';
 
-import TextInput1 from './component/TextInput1.js';
-import TextInput2 from './component/TextInput2.js';
-import DropdownMenu from './component/DropdownMenu.js';
+import Search from './component/Search.js';
 
-const App = () => {
+function App() {
   return (
-    <div className="container">
-      <img src={datacar} alt="Description de l'image" className="overlay-image"/>
-      <TextInput1 />
-      <TextInput2 />
-      <DropdownMenu />
-    </div>
+<div style={{backgroundImage:`url(${background})`,backgroundRepeat:"no-repeat",backgroundSize:"contain",height:1000,width:1000}}>
+  <Search/>
+</div>
   );
 };
 
