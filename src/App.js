@@ -8,7 +8,7 @@ import Search from './component/Search.js';
 
 function App() {
   return (
-<div style={{backgroundImage:`url(${background})`,backgroundRepeat:"no-repeat",backgroundSize:"contain",height:1000,width:1000}}>
+<div className='image' style={{backgroundImage:`url(${background})`,backgroundRepeat:"no-repeat",backgroundSize:"contain",height:1000,width:1000}}>
   <Search/>
 </div>
   );

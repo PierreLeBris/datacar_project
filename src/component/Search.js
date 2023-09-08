@@ -8,9 +8,9 @@ import DropdownMenu from './DropdownMenu.js';
 const Search = () => {
     return (
       <div className='container'>
-        <TextInput1 />
-        <TextInput2 />
-        <DropdownMenu />
+        <TextInput1 className='text1'/>
+        <TextInput2 className='text2'/>
+        <DropdownMenu className='menu1'/>
       </div>
     );
   };
