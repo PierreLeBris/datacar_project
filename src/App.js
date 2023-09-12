@@ -1,16 +1,19 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react';
-//import datacar from './img/DataCar.png';
+import React, {useEffect} from 'react';
 import background from './img/DataCar.png';
 import './App.css';
+import { useSelector, useDispatch, Provider } from "react-redux";
+import allTheActions from "./actions";
+import { store } from './config/store'
 
 import Search from './component/Search.js';
+import List from './component/list';
 
 function App() {
   return (
-<div className='image' style={{backgroundImage:`url(${background})`,backgroundRepeat:"no-repeat",backgroundSize:"contain",height:1000,width:1000}}>
-  <Search/>
-</div>
+    <Provider store={store}>
+      <List />
+    </Provider>
   );
 };
 
