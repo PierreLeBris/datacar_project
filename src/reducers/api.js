@@ -1,3 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { API_SUCCESS, API_ERROR, API_SUCCESS_SEARCH } from '../actions/api'
 
 const initialState = {

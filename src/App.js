@@ -1,18 +1,14 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-import React, {useEffect} from 'react';
-import background from './img/DataCar.png';
+import React from 'react';
 import './App.css';
-import { useSelector, useDispatch, Provider } from "react-redux";
-import allTheActions from "./actions";
-import { store } from './config/store'
-
-import Search from './component/Search.js';
-import List from './component/list';
+import { Provider } from "react-redux";
+import { store } from './config/store';
+import { RouterProvider } from "react-router-dom";
+import router from "./config/router";
 
 function App() {
   return (
     <Provider store={store}>
-      <List />
+      <RouterProvider router={router} />
     </Provider>
   );
 };
