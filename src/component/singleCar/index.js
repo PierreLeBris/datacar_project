@@ -24,7 +24,13 @@ const SingleCar = (props) => {
             <SecondLine>
                 <img src={logo} alt='test car' width={750} height={750}/>
                 <div>
-                    test
+                    <StyledElement>- Fuel: {apiResponse.Fuel}</StyledElement>
+                    <StyledElement>- Type of vehicule: {apiResponse["Veh Class"]}</StyledElement>
+                    <StyledElement>- City MPG: {apiResponse["City MPG"]}</StyledElement>
+                    <StyledElement>- Cmb MPG: {apiResponse["Cmb MPG"]}</StyledElement>
+                    <StyledElement>- Cyl: {apiResponse["Cyl"]}</StyledElement>
+                    <StyledElement>- Greenhouse Gas Score: {apiResponse["Greenhouse Gas Score"]}</StyledElement>
+                    <StyledElement>- Air Pollution Score: {apiResponse["Air Pollution Score"]}</StyledElement>
                 </div>
             </SecondLine>
         </div>
@@ -54,4 +60,9 @@ const SecondLine = styled.div`
   margin-top: 2vh;
   margin-bottom: 3vh;
   color: #ffffff;
+  font-size: 18px;
+`
+const StyledElement = styled.div`
+    margin-bottom: 3vh;
+    padding-left: 10vh;
 `
