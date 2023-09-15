@@ -4,8 +4,9 @@ import allTheActions from "../../actions";
 import styled from "styled-components";
 import ReactPaginate from "react-paginate";
 import { motion } from "framer-motion";
+import ListRow from '../listRow';
 
-const List = () => {
+const List = ({inputValue}) => {
 
   const dispatch = useDispatch();
   const apiResponse = useSelector((state) =>
@@ -37,12 +38,6 @@ const List = () => {
     duration: 0.5,
     ease: "easeInOut",
   };
-
-  const [searchInput, setSearchInput] = useState("");
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-  };
   
   useEffect(() => {
     dispatch(allTheActions.api.getAllCars());
@@ -50,12 +45,6 @@ const List = () => {
 
   return (
     <ContainAll>
-      <input
-        type="search"
-        placeholder="Search here"
-        onChange={handleChange}
-        value={searchInput}
-      />
       
       <MyPaginate
         pageCount={totalPages}
@@ -71,7 +60,7 @@ const List = () => {
       >
         {apiResponse
           .filter((item) =>
-            item.Model.toLowerCase().includes(searchInput.toLowerCase())
+            item.Model.toLowerCase().includes(inputValue.toLowerCase())
           )
           .slice(
             numberOfRecordsVistited,
@@ -79,18 +68,18 @@ const List = () => {
           )
           .map((item) => {
             return (
-              <>
+              <React.Fragment key={item._id}>
                 <motion.div
                   whileInView={{ x: 0 }}
                   initial={{ x: -300 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
                   <div>
-                    {console.log(item)}
-                    {item.Model}
+                    <ListRow name={item.Model} id={item._id} greenhouse={item["Greenhouse Gas Score"]} air={item["Air Pollution Score"]}>
+                    </ListRow>
                   </div>
                 </motion.div>
-              </>
+              </React.Fragment>
             );
           })}
       </motion.div>
@@ -125,7 +114,7 @@ const MyPaginate = styled(ReactPaginate).attrs({
   li a {
     border-radius: 7px;
     padding: 0.1rem 1rem;
-    border: gray 1px solid;
+    border: white 1px solid;
     cursor: pointer;
   }
   li.previous a,
@@ -134,7 +123,7 @@ const MyPaginate = styled(ReactPaginate).attrs({
     border-color: transparent;
   }
   li.active a {
-    background-color: #0366d6;
+    background-color: #4F709C;
     border-color: transparent;
     color: white;
   }

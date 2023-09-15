@@ -21,10 +21,10 @@ export const getAllCars = () => dispatch => {
   export const getOneCar = (param) => dispatch => {
     axios({
       method: 'GET',
-      url: `http://localhost:3000${param}`,
+      url: `http://localhost:3000/${param}`,
     })
       .then(response => {
-        dispatch({ type: API_SUCCESS, payload: {response, label: 'single'} })
+        dispatch({ type: API_SUCCESS, payload: {response, label: 'response'} })
       })
       .catch(error => {
         dispatch({ type: API_ERROR, error: error })
