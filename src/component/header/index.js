@@ -11,7 +11,9 @@ const Header = ({ onInputChange }) => {
 
     return (
         <DivHeader>
-            <StyledImg src={logo} alt='Datacar log' />
+            <StyledSearch>
+              <StyledImg src={logo} alt='Datacar log' />
+            </StyledSearch>
             <StyledTitle>DataCar</StyledTitle>
             <StyledSearch>
                 <StyledInput
@@ -33,7 +35,7 @@ const DivHeader = styled.div`
   left: 0;
   top: 0;
   display: flex;
-  height: 10vh;
+  //height: 10vh;
   width: 100%;
   background-color: #ffffff;
   justify-content: space-between; /* Space between logo and title/search */
@@ -41,11 +43,16 @@ const DivHeader = styled.div`
 const StyledImg = styled.img`
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Margin between logo and title/search */
+  width: 200px;
 `
 const StyledTitle = styled.h1`
-  font-size: 24px;
+  //font-size: 24px;
+  display: flex;
+  align-items: center;
   margin: 0;
   text-align: center;
+  justify-content: center;
+  flex-grow: 1;
 `
 const StyledSearch = styled.div`
     display: flex; /* Flex container for search bar and button */
