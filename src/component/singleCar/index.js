@@ -52,9 +52,9 @@ const SingleCar = (props) => {
             <ThirdLine>
                 <StyledElement>- Fuel: {apiResponse.Fuel}</StyledElement>
                 <StyledElement>- Type of vehicule: {apiResponse["Veh Class"]}</StyledElement>
-                <StyledElement>- City KPG: {apiResponse["City MPG"]}</StyledElement>
-                <StyledElement>- HWY KPG: {apiResponse["Hwy MPG"]}</StyledElement>
-                <StyledElement>- Cmb KPG: {apiResponse["Cmb MPG"]}</StyledElement>
+                <StyledElement>- City L/100 km : {apiResponse["City MPG"]}</StyledElement>
+                <StyledElement>- HWY L/100 km : {apiResponse["Hwy MPG"]}</StyledElement>
+                <StyledElement>- Cmb L/100 km : {apiResponse["Cmb MPG"]}</StyledElement>
                 <StyledElement>- Cyl: {apiResponse["Cyl"]}</StyledElement>
             </ThirdLine>
 
