@@ -6,7 +6,7 @@ import ReactPaginate from "react-paginate";
 import { motion } from "framer-motion";
 import ListRow from '../listRow';
 
-const List = ({inputValue}) => {
+const List = React.memo(({inputValue}) => {
 
   const dispatch = useDispatch();
   const apiResponse = useSelector((state) =>
@@ -41,7 +41,7 @@ const List = ({inputValue}) => {
   
   useEffect(() => {
     dispatch(allTheActions.api.getAllCars());
-  }, [dispatch]);
+  }, [dispatch], []);
 
   return (
     <ContainAll>
@@ -58,7 +58,8 @@ const List = ({inputValue}) => {
         animate="visible"
         transition={pageTransition}
       >
-        {apiResponse
+        {
+        apiResponse
           .filter((item) =>
             item.Model.toLowerCase().includes(inputValue.toLowerCase())
           )
@@ -91,7 +92,7 @@ const List = ({inputValue}) => {
 
     </ContainAll>
   );
-};
+});
 
 export default List;
 

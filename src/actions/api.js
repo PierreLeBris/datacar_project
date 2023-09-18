@@ -21,7 +21,8 @@ export const getAllCars = () => dispatch => {
   export const getOneCar = (param) => dispatch => {
     axios({
       method: 'GET',
-      url: `http://localhost:3000/${param}`,
+      url: `http://localhost:3000/${param}?metric=true`,
+      //metric: true
     })
       .then(response => {
         dispatch({ type: API_SUCCESS, payload: {response, label: 'response'} })

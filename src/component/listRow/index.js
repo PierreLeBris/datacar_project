@@ -50,7 +50,7 @@ const Row = styled.div`
   align-items: center;
   justify-content: space-between;
   border-radius: 30px;
-  padding: 5vh;
+  padding: 3vh;
   @media (min-width: 768px){
     margin: 5vh;
     width: 75vh;

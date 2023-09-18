@@ -43,11 +43,17 @@ const DivHeader = styled.div`
 const StyledImg = styled.img`
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Margin between logo and title/search */
-  width: 200px;
+  width: 100px;
+  @media (min-width: 768px) {
+    width: 200px;
+  }
 `
 const StyledTitle = styled.h1`
   //font-size: 24px;
-  display: flex;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+  display: none;
   align-items: center;
   margin: 0;
   text-align: center;
